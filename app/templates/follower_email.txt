@@ -1,0 +1,9 @@
+Dear {{ user.nickname }},
+
+{{ follower.nickname }} has requested to connect to you. Click on the following link to visit {{ follower.nickname }}'s business and his profile page:
+
+{{ url_for("user", nickname=follower.nickname, _external=True) }}
+
+Regards,
+
+The connectifyNYC Admin
