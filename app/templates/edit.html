@@ -1,0 +1,52 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit Your Profile</h1>
+<form action="" method="post" name="edit">
+    {{ form.hidden_tag() }}
+    <table>
+        <tr>
+            <td>Your nickname:</td>
+            <td>
+                {{ form.nickname(size=24) }}
+                {% for error in form.errors.nickname %}
+                <br><span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>Your Email Address:</td>
+            <td>{{ form.about_me(cols=32, rows=1) }}</td>
+        </tr>
+        <tr>
+            <td>Business Name:</td>
+            <td>{{ form.business(cols=32, rows=1) }}</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>{{ form.address(cols=32, rows=1) }}</td>
+        </tr>
+         <tr>
+            <td>Business Phone Number:</td>
+            <td>{{ form.phone(cols=32, rows=1) }}</td>
+        </tr>
+         <tr>
+            <td>Number of Employees:</td>
+            <td>{{ form.employees(cols=32, rows=1) }}</td>
+        </tr>  
+         <tr>
+            <td>Estimated Annual Revenue:</td>
+            <td>{{ form.revenue(cols=32, rows=1) }}</td>
+        </tr>
+         <tr>
+            <td>Months in Business:</td>
+            <td>{{ form.months(cols=32, rows=1) }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Save Changes"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
