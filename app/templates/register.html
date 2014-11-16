@@ -1,0 +1,47 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <h1>Register</h1>
+    <form action="" method="post" name="login">
+        {{ form.hidden_tag() }}
+        <p>
+            Please enter your OpenID, or select one of the providers below:<br>
+            {{ form.openid(size=60) }}
+            {% for error in form.openid.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+        <p>
+            Email Address<br>
+            {{ form.ein(size=60) }}
+            {% for error in form.ein.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+        </p>
+            Password<br>
+            {{ form.ein(size=60) }}
+            {% for error in form.ein.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+        </p>
+        <h2>Your business information</h2>
+            Employer Identification Number (EIN)<br>
+            {{ form.ein(size=60) }}
+            {% for error in form.ein.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+        </p>
+        <input type="text" size="30" value="Business name"/><input type="text" size="30" value="# of employees"/><input type="text" size="30" value="Address"/><input type="text" size="30" value="Estimated annual revenue"/><input type="text" size="30" value="Public phone number"/><input type="text" size="30" value="Months in business"/>
+        </p> 
+
+      <h2>You're interested in...</h2>
+        <p>{{ form.local_businesses }} Connecting with local businesses </p>
+        <p>{{ form.potential_partners }} Networking with other entrepreneurs</p>
+        <p>{{ form.other_entrep }} Partnering with other businesses</p>
+        <p>{{ form.service_providers }} Providing a service to other businesses</p>
+        <p>{{ form.experienced_mentors }} Mentoring other business owners</p>
+        <!-- p>{{ form.remember_me }} Remember Me</p> -->
+        <p><input type="submit" value="Register"></p>
+    </form>
+{% endblock %}
